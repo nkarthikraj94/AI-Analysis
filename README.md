@@ -16,7 +16,7 @@ An intelligent, AI-powered customer complaint management system. Automatically a
 
 ## 🧱 Tech Stack
 
-- **Framework**: Next.js 15 (App Router)
+- **Framework**: Next.js 16 (App Router)
 - **Styling**: Tailwind CSS + Shadcn UI
 - **Database**: MySQL with Prisma ORM
 - **Auth**: Auth.js (v5)
