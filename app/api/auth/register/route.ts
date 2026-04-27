@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
-import bcrypt from "bcryptjs";
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
@@ -58,15 +57,17 @@ export async function POST(req: Request) {
         html: `<p>Hello <strong>${name}</strong>,</p><p>Your OTP is <strong>${otp}</strong>. It expires in 10 minutes.</p>`,
       });
       console.log("Email sent successfully:", info.messageId);
-    } catch (mailError: any) {
+    } catch (mailError: unknown) {
+      const message = mailError instanceof Error ? mailError.message : String(mailError);
       console.error("Mail sending failed:", mailError);
       // Expose error for debugging (remove in production)
-      return NextResponse.json({ error: `SMTP Error: ${mailError.message}` }, { status: 500 });
+      return NextResponse.json({ error: `SMTP Error: ${message}` }, { status: 500 });
     }
 
     return NextResponse.json({ message: "OTP sent to email", otp });
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : String(error);
     console.error("Register error:", error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

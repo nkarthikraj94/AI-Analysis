@@ -45,8 +45,9 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ message: "User verified and created successfully", user: { email: user.email } });
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : String(error);
     console.error("Verify OTP error:", error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

@@ -1,7 +1,6 @@
 import { auth } from "@/auth";
 import { Button } from "./ui/button";
 import Link from "next/link";
-import { signOut } from "@/auth";
 import { LogoutButton } from "./LogoutButton";
 
 export default async function Navbar() {
