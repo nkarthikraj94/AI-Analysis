@@ -1,9 +1,6 @@
-# EcoLens | AI Complaint Analyzer
+# AI Complaint Analyzer System
 
-
-**EcoLens** is a sophisticated, AI-powered complaint management system built with Next.js 16, designed to automate customer feedback analysis using Google Gemini. It features secure OTP-based authentication, real-time sentiment analysis, and a clean, responsive dashboard.
-
----
+An intelligent, AI-powered customer complaint management system. Automatically analyze sentiment, prioritize issues, and gain insights from customer feedback using Google Gemini 1.5 Flash.
 
 ## 🚀 Key Features
 
@@ -84,4 +81,4 @@ Navigate to `http://localhost:3000` to see the application in action.
 This project is for technical assessment purposes.
 
 ---
-Built with ❤️ by **Karthik Raj N**.
+Built by **Karthik Raj** for the AI AnalyserTech Assignment.
